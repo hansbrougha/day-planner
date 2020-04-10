@@ -26,15 +26,15 @@
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
-      <p id="currentDay" class="lead"></p>
+      <p id="currentDay" class="lead">2:02 AM</p>
     </header>
     <div class="container">
-      <div class="row d-flex p-2 bd-highlight">
+      <div class="row d-flex p-2 bd-highlight time-block">
         <!--Divide one row from the rest, style with css.-->
-        <div class="col-1 time-block hour row">
+        <div class="col-1 hour">
           <p>00:00</p>
         </div>
-        <!--Divide one row from the rest, style with css.-->
+        <!--PAST PRESENT FUTURE-->
         <div class="col-6 past present future">
           FORM? SAVE TO LOCAL STORAGE?
         </div>
@@ -43,6 +43,7 @@
           SAVE Button
         </div>
       </div>
+      <!--Empty Spare Model Div-->
       <div class="row d-flex p-2 bd-highlight">
         <div class="col-4">
           10:00 AM
@@ -54,86 +55,11 @@
           3 of 3
         </div>
       </div>
-      <div class="row d-flex p-2 bd-highlight">
-        <div class="col-4">
-          11:00 AM
-        </div>
-        <div class="col-6">
-          DETAILS
-        </div>
-        <div class="col-2">
-          3 of 3
-        </div>
-      </div>
-      <div class="row d-flex p-2 bd-highlight">
-        <div class="col-4">
-          12:00 PM
-        </div>
-        <div class="col-6">
-          DETAILS
-        </div>
-        <div class="col-2">
-          3 of 3
-        </div>
-      </div>
-      <div class="row d-flex p-2 bd-highlight">
-        <div class="col-4">
-          1:00 PM
-        </div>
-        <div class="col-6">
-          DETAILS
-        </div>
-        <div class="col-2">
-          3 of 3
-        </div>
-      </div>
-      <div class="row d-flex p-2 bd-highlight">
-        <div class="col-4">
-          2:00 PM
-        </div>
-        <div class="col-6">
-          DETAILS
-        </div>
-        <div class="col-2">
-          3 of 3
-        </div>
-      </div>
-      <div class="row d-flex p-2 bd-highlight">
-        <div class="col-4">
-          3:00 PM
-        </div>
-        <div class="col-6">
-          DETAILS
-        </div>
-        <div class="col-2">
-          3 of 3
-        </div>
-      </div>
-      <div class="row d-flex p-2 bd-highlight">
-        <div class="col-4">
-          4:00 PM
-        </div>
-        <div class="col-6">
-          DETAILS
-        </div>
-        <div class="col-2">
-          3 of 3
-        </div>
-      </div>
-      <div class="row d-flex p-2 bd-highlight">
-        <div class="col-4">
-          5:00 PM
-        </div>
-        <div class="col-6">
-          DETAILS
-        </div>
-        <div class="col-2">
-          3 of 3
-        </div>
-      </div>
+
       <!-- Timeblocks go here -->
     </div>
 
+    <script src="./Assets/scripts/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   </body>
