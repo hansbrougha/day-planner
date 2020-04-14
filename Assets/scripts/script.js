@@ -60,12 +60,16 @@ var currentDay = [
   },
   {
     hour: "5:00",
-    time: "",
+    time: "17",
     meridiem: "PM",
     task: "",
   },
 ];
 console.log(currentDay);
+
+//Saves User Data in Local Storage
+
+//Shows User Data for each hour
 
 currentDay.forEach(function (currentHour) {
   //Creates New Row, Appends to container
