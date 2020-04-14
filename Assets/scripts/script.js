@@ -73,4 +73,10 @@ currentDay.forEach(function (currentHour) {
     class: "row time-block",
   });
   $(".container").append(newRow);
+  //Creates New Div for Time Slot
+  var timeSlot = $("<div>")
+    .text(`${currentHour.hour}${currentHour.meridiem}`)
+    .attr({
+      class: "col-1 hour",
+    });
 });
