@@ -79,4 +79,12 @@ currentDay.forEach(function (currentHour) {
     .attr({
       class: "col-1 hour",
     });
+  //Creates New Div, Adds class of description
+  var taskArea = $("<div>").attr({
+    class: "col-6 description",
+  });
+  //Creates New Text Area for User Data
+  var taskInfo = $("<textarea>");
+  taskArea.append(taskInfo);
+  taskInfo.attr("task", currentHour.task);
 });
