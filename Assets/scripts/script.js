@@ -87,4 +87,20 @@ currentDay.forEach(function (currentHour) {
   var taskInfo = $("<textarea>");
   taskArea.append(taskInfo);
   taskInfo.attr("task", currentHour.task);
+  //Adds Class Past to Text Area when time slot has passed
+  if (currentHour.time < moment().format("HH")) {
+    taskInfo.attr({
+      class: "past",
+    });
+    //If current hour, use class present
+  } else if (currentHour.time === moment().format("HH")) {
+    taskInfo.attr({
+      class: "present",
+    });
+    //Class of future for upcoming tasks
+  } else if (currentHour.time === moment().format("HH")) {
+    taskInfo.attr({
+      class: "future",
+    });
+  }
 });
