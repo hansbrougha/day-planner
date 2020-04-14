@@ -83,7 +83,7 @@ currentDay.forEach(function (currentHour) {
   var taskArea = $("<div>").attr({
     class: "col-6 description",
   });
-  //Creates New Text Area for User Data
+  //Creates New Text Area for User Data. Doesn't Seem to Work.
   var taskInfo = $("<textarea>");
   taskArea.append(taskInfo);
   taskInfo.attr("task", currentHour.task);
