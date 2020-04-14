@@ -103,4 +103,12 @@ currentDay.forEach(function (currentHour) {
       class: "future",
     });
   }
+  // Save Button
+  var saveButton = $("<span class='ui-icon-disk'></span>");
+  var saveTask = $("<button>").attr({
+    class: "col-1 saveBtn",
+  });
+  //Appends saveButton to newRow
+  saveTask.append(saveButton);
+  newRow.append(newRow, timeSlot, saveTask);
 });
