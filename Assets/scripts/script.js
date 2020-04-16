@@ -44,7 +44,7 @@ var currentDay = [
     hour: "2:00",
     time: "14",
     meridiem: "PM",
-    task: "",
+    task: "2 pm task info",
   },
   {
     hour: "3:00",
@@ -72,6 +72,7 @@ console.log(currentDay);
 //Shows User Data for each hour
 
 currentDay.forEach(function (currentHour) {
+  //console.log(currentHour);
   //Creates New Row, Appends to container
   var newRow = $("<form>").attr({
     class: "row time-block",
@@ -83,14 +84,15 @@ currentDay.forEach(function (currentHour) {
     .attr({
       class: "col-1 hour",
     });
-  //Creates New Div, Adds class of description
-  var taskArea = $("<div>").attr({
-    class: "col-6 description",
-  });
+
   //Creates New Text Area for User Data. Doesn't Seem to Work.
+  //Need specific identifier
   var taskInfo = $("<textarea>");
-  taskArea.append(taskInfo);
+  taskInfo.attr({ class: "col-6 description" });
   taskInfo.attr("task", currentHour.task);
+  taskInfo.attr("id", "input" + currentHour.time);
+  console.log(currentHour.task);
+
   //Adds Class Past to Text Area when time slot has passed
   if (currentHour.time < moment().format("HH")) {
     taskInfo.attr({
@@ -102,7 +104,7 @@ currentDay.forEach(function (currentHour) {
       class: "present",
     });
     //Class of future for upcoming tasks
-  } else if (currentHour.time === moment().format("HH")) {
+  } else if (currentHour.time > moment().format("HH")) {
     taskInfo.attr({
       class: "future",
     });
@@ -114,5 +116,16 @@ currentDay.forEach(function (currentHour) {
   });
   //Appends saveButton to newRow
   saveTask.append(saveButton);
-  newRow.append(newRow, timeSlot, saveTask);
+  newRow.append(newRow, timeSlot, taskInfo, saveTask);
 });
+//====================================
+//Click Event needs to save input from text area (task)
+//When we click the button, we need a unique identifier on each textarea
+$(".saveBtn").click(function (event) {
+  event.preventDefault();
+  console.log(event);
+});
+//Check all inputs based off their id and see if the values appear in html elements using inspector
+//event listener is going to be applied to every single button
+//try and figure out a way to capture your values.
+//you will need to reference .val somewhere in your code.
